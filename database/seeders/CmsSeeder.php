@@ -18,6 +18,7 @@ class CmsSeeder extends Seeder
             'logo' => '...',
             'primary_color' => '#3d3d3d',
             'secondary_color' => '#e1e1e1',
+            'image' => ''
         ]);
     }
 }

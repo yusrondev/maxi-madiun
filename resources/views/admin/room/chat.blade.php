@@ -20,7 +20,13 @@
             /* font-family: 'Roboto', sans-serif; */
             margin: 0;
             padding: 0;
-            background-color: {{$cms->primary_color}}!important;
+            <?php if ($cms->image): ?>
+                background-image: url('<?php echo $cms->image ? "/assets/image_content/" . $cms->image : ""; ?>');
+                background-repeat: no-repeat;
+                background-size: cover;
+            <?php else: ?>
+                background-color: {{$cms->primary_color}}!important;
+            <?php endif; ?>
         }
 
         .chat-room{
@@ -253,12 +259,12 @@
                 <div class="chat-box" id="chat-box">
                     @foreach ($model as $item)
                         <div style="background-color: {{ @$chat_contents->chat_color }}" class="card chat-message" data-id="{{ $item->id }}">
-                            <b>{{ $item->name }}</b>
+                            <b style="font-size:{{ @$chat_contents->chat_sizeName }}px;">{{ $item->name }}</b>
                             @if ($item->image)
                                 <br><img src="{{ asset($item->image) }}" alt="Image" class="img-chat">
-                                <p style="font-family: {{@$chat_contents->chat_font}}; color: {{ @$chat_contents->username_color }}">{{ $item->text }}</p>
+                                <p style="font-family: {{@$chat_contents->chat_font}}; color: {{ @$chat_contents->username_color }}; font-size:{{ @$chat_contents->chat_size }}px">{{ $item->text }}</p>
                             @else
-                                <p style="font-family: {{@$chat_contents->chat_font}}; color: {{ @$chat_contents->username_color }}">{{ $item->text }}</p>
+                                <p style="font-family: {{@$chat_contents->chat_font}}; color: {{ @$chat_contents->username_color }}; font-size:{{ @$chat_contents->chat_size }}px">{{ $item->text }}</p>
                             @endif
                         </div>
                         @if (!empty($item->reply))

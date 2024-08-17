@@ -17,6 +17,8 @@ return new class extends Migration
             $table->text('chat_font');
             $table->text('username_color');
             $table->text('chat_color');
+            $table->text('chat_size');
+            $table->text('chat_sizeName');
             $table->timestamps();
         });
     }

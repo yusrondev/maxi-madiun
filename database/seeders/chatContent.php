@@ -18,6 +18,8 @@ class chatContent extends Seeder
             'chat_font' => '',
             'username_color' => '',
             'chat_color' => '',
+            'chat_sizeName' => '',
+            'chat_size' => '',
         ]);
     }
 }

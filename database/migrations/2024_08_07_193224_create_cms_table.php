@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('logo');
             $table->string('primary_color');
             $table->string('secondary_color');
+            $table->string('image');
             $table->timestamps();
         });
     }
