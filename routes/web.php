@@ -21,6 +21,9 @@ Route::post('/receive', [RoomController::class, 'receive']);
 Route::post('/api/send-msg', [FrontendController::class, 'sendmsg']);
 Route::post('/api/get-msg', [FrontendController::class, 'getmsg']);
 
+// cms & chat_contents data
+Route::get('/api/get-cms', [FrontendController::class, 'getcms']);
+
 // room chat
 Route::get('/room/chat/{code}', [RoomController::class, 'roomchat']);
 
