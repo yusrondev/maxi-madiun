@@ -214,7 +214,7 @@
             stroke-width: 1;
         }
 
-        .img-chat{max-width:300px;max-height:300px;margin-top:10px;border-radius:10px}
+        .img-chat{width:300px;height:300px;margin-top:10px;border-radius:10px}
     </style>
 
     <body>
