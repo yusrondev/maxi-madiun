@@ -36,6 +36,16 @@
                                     </div>
                                 </div>
                             </div><br>
+                                <h5>Background :</h5>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img style="width:100px" src="{{ asset('/assets/image_content/'.$data->image) }}">
+                                    </div>
+                                    <div class="col">
+                                        <input type="file" name="image" class="form-control" />
+                                    </div>
+                                </div>
+                            <br>
                             <div class="row">
                                 <div class="col">
                                     <h5>Primary Color</h5>
@@ -267,6 +277,16 @@
                                     </div>
                                 </div>
                             </div><br>
+                            <div class="row">
+                                <div class="col">
+                                <label for="chatFontPreview" class="form-label">Chat Name Size</label>
+                                    <input class="form-control" type="number" min="0" name="chat_sizeName" value="{{ $data_chat->chat_sizeName }}">
+                                </div>
+                                <div class="col">
+                                    <label for="chatFontPreview" class="form-label">Chat Size</label>
+                                    <input class="form-control" type="number" min="0" name="chat_size" value="{{ $data_chat->chat_size }}">
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col">
                                     <label for="usernameColor" class="form-label">Color Username And Chat</label>
