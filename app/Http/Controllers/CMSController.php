@@ -163,4 +163,26 @@ class CMSController extends Controller
 
         return response()->json(['error' => 'User not found'], 404);
     }
+
+    public function image_destroy($id)
+    {
+        // Temukan model berdasarkan ID
+        $data = CMS::find($id);
+
+        if ($data && $data->image) {
+            // Hapus file gambar dari storage
+            $imagePath = public_path('/assets/image_content/' . $data->image);
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+            
+            // Set field image menjadi null di database
+            $data->image = null;
+            $data->save();
+        }
+
+        // Kembalikan response JSON untuk AJAX
+        return response()->json(['success' => 'Image deleted successfully']);
+    }
+
 }
